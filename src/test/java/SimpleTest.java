@@ -49,5 +49,14 @@ public class SimpleTest extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(), "https://github.com/SergeiDemyanenko/PlatformaticaQA/branches");
     }
 
+    @Test
+    public void myTest() {
+
+        WebDriver browser = getDriver();
+        browser.get("https://github.com/SergeiDemyanenko/PlatformaticaQA");
+        WebElement name = browser.findElement(By.xpath("//h2[contains(text(),'Languages')]"));
+
+        Assert.assertEquals(name.getText(), "Languages");
+    }
 
 }
