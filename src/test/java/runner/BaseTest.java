@@ -38,7 +38,6 @@ public abstract class BaseTest {
 
     @BeforeMethod
     protected void setUpAll() {
-        System.out.println(remoteWebDriver);
         if (remoteWebDriver) {
             try {
                 this.driver = new RemoteWebDriver(new URL(HUB_URL), DesiredCapabilities.chrome());
