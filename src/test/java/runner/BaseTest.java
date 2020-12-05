@@ -18,6 +18,7 @@ public abstract class BaseTest {
     public static final String HUB_URL = "http://localhost:4444/wd/hub";
 
     private static boolean remoteWebDriver = false;
+
     static {
         try {
             HttpURLConnection con = (HttpURLConnection) new URL(HUB_URL + "/status").openConnection();
@@ -27,7 +28,8 @@ public abstract class BaseTest {
             } finally {
                 con.disconnect();
             }
-        } catch (IOException ignore) {}
+        } catch (IOException ignore) {
+        }
 
         if (!remoteWebDriver) {
             WebDriverManager.chromedriver().setup();

@@ -29,8 +29,11 @@ public class SimpleTest extends BaseTest {
         button.click();
 
         WebElement input = driver.findElement(By.xpath("(//div[@class='input-group']/input)[1]"));
+
+
         Assert.assertEquals(input.getAttribute("value"), "https://github.com/SergeiDemyanenko/PlatformaticaQA.git");
     }
+
 
     @Test
     public void newTest() throws InterruptedException {
@@ -41,13 +44,16 @@ public class SimpleTest extends BaseTest {
         WebElement button = driver.findElement(By.id("branch-select-menu"));
         button.click();
 
-        Thread.sleep(2000);
 
         WebElement link = driver.findElement(By.xpath("//footer/a[contains(text(), 'branches')]"));
+        Thread.sleep(2000);
         link.click();
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://github.com/SergeiDemyanenko/PlatformaticaQA/branches");
     }
 
 
-}
+    }
+
+
+
