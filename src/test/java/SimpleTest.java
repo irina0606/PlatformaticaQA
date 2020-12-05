@@ -49,5 +49,15 @@ public class SimpleTest extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(), "https://github.com/SergeiDemyanenko/PlatformaticaQA/branches");
     }
 
+    @Test
+    public void fifthTest() throws InterruptedException {
 
+        WebDriver driver = getDriver();
+        driver.get("https://www.smithsonianmag.com/history/thanksgiving-myth-and-what-we-should-be-teaching-kids-180973655/");
+
+        WebElement name = driver.findElement(By.xpath("//div[3]//h1"));
+
+        Assert.assertEquals(name.getText(), "The Myths of the Thanksgiving Story and the Lasting Damage They Imbue");
+
+    }
 }
